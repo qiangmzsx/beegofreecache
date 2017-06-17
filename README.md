@@ -16,7 +16,7 @@ freecache就相当于Java中的ConcurrentHashMap，性能也有很大的提高�
 3. value只能是[]byte类型，使用很不友好
 ## 使用方法
 为此我对freecache进行了简单的封装，让freecache可以集成搭配beego框架中，也可以不在beego框架中独立使用。  
-安装
+### 安装
 ```
 go get  git.oschina.net/qiangmzsx/beegofreecache
 或

@@ -192,7 +192,7 @@ func (free *Cache) CacheStatus(config string) map[string]interface{} {
     return infoMap
 }
 
-// Gob加密
+// Gob序列化
 func GobEncode(data interface{}) ([]byte, error) {
 
     buf := bytes.NewBuffer(nil)
@@ -204,7 +204,7 @@ func GobEncode(data interface{}) ([]byte, error) {
     return buf.Bytes(), nil
 }
 
-// Gob解密
+// Gob反序列化
 func GobDecode(data []byte, to interface{}) error {
 
     buf := bytes.NewBuffer(data)
