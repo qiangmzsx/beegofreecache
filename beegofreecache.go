@@ -35,15 +35,15 @@ func NewFreeRegister() cache.Cache {
 }
 
 // 该函数是可以在任意地方使用，初始化Free进程缓存
-func NewFree(m int) cache.Cache {
+func NewFree(m int) *Cache {
     if free == nil {
         cacheSize := m * 1024 * 1024
         free = freecache.NewCache(cacheSize)
     }
-    beeFree := Cache{}
-    //beeFree :=new(Cache)
+    //beeFree := Cache{}
+    beeFree :=new(Cache)
     beeFree.Free = free
-    return &beeFree
+    return beeFree
 }
 
 //根据key获取对应的value,如果不是在beego框架中,建议使用GetValue

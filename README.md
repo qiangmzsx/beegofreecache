@@ -16,6 +16,17 @@ freecache就相当于Java中的ConcurrentHashMap，性能也有很大的提高�
 3. value只能是[]byte类型，使用很不友好
 ## 使用方法
 为此我对freecache进行了简单的封装，让freecache可以集成搭配beego框架中，也可以不在beego框架中独立使用。  
+安装
+```
+go get  git.oschina.net/qiangmzsx/beegofreecache
+或
+go get github.com/qiangmzsx/beegofreecache
+
+```
+导入包
+```
+import git.oschina.net/qiangmzsx/beegofreecache
+```
 ### 集成到beego框架:
 与beego使用其他的cache一样。
 ```go
@@ -48,7 +59,7 @@ func TestBeeFreeCacheGP(t *testing.T)  {
 bm:=beegofreecache.NewFree(512)//size为M
 bm.Put("beegofreecache", 1, 10*time.Second)
 var ii int
-bm.GetValue("beegofreecache"，ii)
+bm.GetValue("beegofreecache",ii)
 bm.IsExist("beegofreecache")
 bm.Delete("beegofreecache")
 ```  

@@ -109,3 +109,14 @@ func TestBeeFreeCacheClear(t *testing.T)  {
         println(key+strconv.Itoa(i),bm.IsExist(key+strconv.Itoa(i)))
     }
 }
+
+
+func TestBeeFreeCacheGetValue(t *testing.T)  {
+    free:= NewFree(16)
+
+    key:="key"
+    free.Put(key,1200,10*time.Second)
+    var ii int
+    val:=free.GetValue(key,&ii)
+    println("GetValue",val,ii)
+}
