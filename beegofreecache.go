@@ -165,7 +165,7 @@ func (cache *Cache) StartAndGC(config string) error {
 
     cache.Free = free
     cache.Free.ResetStatistics()
-    free = nil
+   // free = nil
     return nil
 }
 
