@@ -170,14 +170,14 @@ func (cache *Cache) StartAndGC(config string) error {
 }
 
 //输出cache状态
-func (free *Cache) String(config string) string {
+func (free *Cache) String() string {
     info := fmt.Sprintf("EntryCount is %d,ExpiredCount is %d,HitCount is %d,HitRate is %f,EvacuateCount Is %d,AverageAccessTime is %d,LookupCount is %d .", free.Free.EntryCount(), free.Free.ExpiredCount(),
         free.Free.HitCount(), free.Free.HitRate(), free.Free.EvacuateCount(), free.Free.AverageAccessTime(), free.Free.LookupCount())
     return info
 }
 
 //获取cache状态
-func (free *Cache) CacheStatus(config string) map[string]interface{} {
+func (free *Cache) CacheStatus() map[string]interface{} {
 
     infoMap := map[string]interface{}{
         "HitCount":          free.Free.HitCount(),
