@@ -63,4 +63,17 @@ bm.GetValue("beegofreecache",ii)
 bm.IsExist("beegofreecache")
 bm.Delete("beegofreecache")
 ```  
+
+### 转化失败
+在使用中如果出现了
+```go
+gob: type not registered for interface
+```
+别着急，可以在init()中加入：
+```go
+gob.Register(map[string]interface{}{})
+gob.Register(map[string][]int{})
+gob.Register(map[string][]int64{})
+```
+其中Register函数中的参数就是需要转化的类型了。
 欢迎大家提供修改意见。

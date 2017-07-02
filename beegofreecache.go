@@ -26,6 +26,9 @@ type Cache struct {
 
 // 如果是需要集成到beego，则init函数必须打开，反之可以注释掉
 func init() {
+    gob.Register(map[string]interface{}{})
+    gob.Register(map[string][]int{})
+    gob.Register(map[string][]int64{})
     cache.Register("beegofreecache", NewFreeRegister)
 }
 
